@@ -51,10 +51,6 @@
     margin-bottom: 20px;
   }
 
-  .back-call__icon svg {
-    height: 60px;
-  }
-
   .menu.active {
     display: flex;
   }

@@ -75,7 +75,6 @@ body {
 
 .header {
   width: 100%;
-  position: relative;
 }
 
 .header__container {
@@ -85,11 +84,6 @@ body {
 .header__container-in {
   align-items: center;
 }
-
-
-
-
-
 
 .logo {
   max-height: 91px;
