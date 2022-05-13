@@ -1,0 +1,135 @@
+.slide {
+  background-image: url(../img/slide.jpg);
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1660px) {
+  .slide {
+    background-image: url(../img/slide_ad.jpg);
+    background-repeat: no-repeat;
+  }
+}
+
+@media(max-width: 1100px) {
+  .menu-btn {
+    width: 50px;
+    height: 30px;
+    position: relative;
+    z-index:2;
+    overflow: hidden;
+  }
+  
+  .menu-btn span {
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F41C31;
+    transition: all 0.5s;
+  }
+  
+  .menu-btn span:nth-of-type(2) {
+    top: calc(50% - 5px);
+  }
+
+  .menu-btn span:nth-of-type(3) {
+    top: calc(50% + 5px);
+  }
+
+  .menu {
+    display: none;
+	  transition: transform 0.5s; 
+  }
+
+  .menu-list {
+    flex-direction: column;
+  }
+
+  .menu__item {
+    margin-bottom: 20px;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header__item {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .back-call__link,
+  .back-call__text {
+    display: none;
+  }
+
+  .header__container {
+    max-height: none;
+  }
+
+  .header__container .container {
+    justify-content: center;
+  }
+
+  .header__container-in {
+    justify-content: space-between;
+  }
+
+  .back-call {
+    justify-self: left;
+  }
+
+  .slide .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slide__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide__title {
+    text-align: center;
+  }
+
+}
+
+@media all and (max-width: 480px) {
+  .slide {
+    background-image: url(../img/slide_480.jpg);
+    background-repeat: no-repeat;
+  }
+
+  body {
+    max-width: 35%;
+  }
+
+  .header {
+    max-width: 35%;
+  }
+
+  .slide {
+    max-width: 35%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    max-width: 30%;
+  }
+
+  .header {
+    max-width:30%;
+  }
+
+  .slide {
+    max-width: 30%;
+  }
+}
