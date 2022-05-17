@@ -33,7 +33,6 @@ p {
 
 body {
   font-family: 'Inter', sans-serif;
-  min-width: 1200px;
 }
 
 .list-reset {
@@ -73,15 +72,12 @@ body {
 
 /*header*/
 
-.header {
-  width: 100%;
-}
-
 .header__container {
   border-bottom: 1px solid #E5E5E5;
 }
 
 .header__container-in {
+  width: 100%;
   align-items: center;
 }
 
@@ -154,6 +150,7 @@ body {
 .slide {
   position: relative;
   padding: 111px 0 111px 0;
+  overflow: hidden;
 }
 
 .slide::after {
@@ -199,4 +196,3 @@ body {
   background-image: url(../img/yes.png);
   background-repeat: no-repeat;
 }
-

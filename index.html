@@ -19,11 +19,6 @@
         <div class="header__container">
             <div class="container flex">
                 <div class="header__container-in flex">
-                    <div class="menu-btn flex">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
                     <div class="logo">
                         <a class="logo__link">
                             <img class="logo__img" src="img/logo.svg" alt="logo">
@@ -45,6 +40,11 @@
                         <a class="back-call__link" href="#">
                             Обратный звонок
                         </a>
+                    </div>
+                    <div class="menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
             </div>
@@ -131,16 +131,20 @@
         </div>
     </section>
 </body>
-<<<<<<< HEAD
+
 <script>
-    let menuBtn = document.querySelector('.menu-btn');
+    let menuBtnOne = document.querySelector('.menu-btn');
+let menuContainer = document.querySelector('.menu-container');
+menuBtnOne.addEventListener('click', function(){
+	menuContainer.classList.toggle('active');
+})
+
+
+let menuBtn = document.querySelector('.menu-btn');
 let menu = document.querySelector('.menu');
 menuBtn.addEventListener('click', function(){
+	menuBtn.classList.toggle('active');
 	menu.classList.toggle('active');
 })
 </script>
 </html>
-=======
-
-</html>
->>>>>>> 4f50c02ed29a8727a6bf99025b92bf3ba18b5755
