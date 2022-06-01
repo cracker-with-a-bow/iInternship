@@ -238,7 +238,7 @@ body {
 .catalog__list {
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   margin-bottom: 80px;
 }
 
@@ -253,13 +253,17 @@ body {
 }
 
 .catalog__img {
-  margin-bottom: 24px;
+  padding-bottom: 24px;
 }
 
 .catalog__item-text {
   max-width: 221px;
   padding-bottom: 24px;
   text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1D2936;
 }
 
 /* documents */
@@ -364,7 +368,7 @@ body {
 /* clients*/
 
 .clients {
-  padding: 115px 0px;
+  padding: 115px 15px;
   background-image: url(../img/background-clients.png);
   background-repeat: no-repeat;
   overflow: hidden;
@@ -377,6 +381,12 @@ body {
 .clients__slider-item {
   margin: 0 15px;
   margin-bottom: 20px;
+}
+
+.clients__slider-img {
+  max-width: 183px;
+  margin: 0;
+  border-radius: 8px;
 }
 
 /*contacts*/
