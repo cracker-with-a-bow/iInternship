@@ -15,10 +15,10 @@ function randomArray(count, n, m) {
   }
   console.log(array);
   /* почему-то не меняет первый элемент*/
-  for (let i = 0; i < count; ++i) {
-    for (let j = 0; j < count; ++j) {
+  for (let i = 0; i < count; i++) {
+    for (let j = 0; j < count; j++) {
       if (i = j) {
-        if (array.includes('-')) {
+        if (array[i][j]<0) {
           array[i][j] = 0;
         } else {
           array [i][j] = 1;
