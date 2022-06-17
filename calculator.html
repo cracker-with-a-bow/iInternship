@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../js/calculator.js"></script>
+    <title>Калькулятор стоимости скинали</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--<link rel="stylesheet" href="css/media-for-calculator.css">-->
+    <link rel="stylesheet" href="css/style-for-calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="calculator">
+        <div class="container">
+            <p class="calculator__title">
+                Заполните форму на&nbsp;бесплатный
+                выезд замерщика и&nbsp;получите скидку
+            </p>
+            <div class="calculator__container flex">
+                <article class="calculator__price calculator__article">
+                    <p class="section-title section-title-price-indent">
+                        Калькулятор стоимости скинали
+                    </p>
+                    <div class="list-parametrs">
+                        <ul class="list-panels list-reset">
+                            <li class="calculator__item">
+                                <div class="div-for-item-title">
+                                    <label class="calculator__item-title">
+                                        1-я панель
+                                    </label>
+                                </div>
+                                <span class="price-parametr">
+                                    <input type="text" class="input-panel-size" value="100"> <span class="small-text">x</span>
+                                    <input type="text" class="input-panel-size" value="2"> <span class="small-text">см</span>
+                                </span>
+                            </li>
+                            <li class="calculator__item">
+                                <div class="div-for-item-title">
+                                    <label class="calculator__item-title">
+                                        2-я панель
+                                    </label>
+                                </div>
+                                <span class="price-parametr">
+                                    <input type="text" class="input-panel-size" value="1"> <span class="small-text">x</span>
+                                    <input type="text" class="input-panel-size" value="0"> <span class="small-text">см</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn addPanel">
+                            Добавить
+                        </button>
+                        <ul class="calculator__list list-reset">
+                            <li class="calculator__item glass">
+                                <div class="div-for-item-title">
+                                    <label class="calculator__item-title">
+                                        Тип стекла
+                                    </label>
+                                </div>
+                                <span class="calculator__parametr glass-type">
+                                    <select class="select-glass"></select>
+                                </span>
+                            </li>
+                            <li class="calculator__item">
+                                <div class="div-for-item-title">
+                                    <label class="calculator__item-title">
+                                        УФ-печать
+                                    </label>
+                                </div>
+                                <span class="calculator__parametr">
+                                    <input type="checkbox" class="input-panel">
+                                </span>
+                            </li>
+                            <li class="calculator__item">
+                                <div class="div-for-item-title">
+                                    <label class="calculator__item-title">
+                                        Подсветка
+                                    </label>
+                                </div>
+                                <span class="calculator__parametr">
+                                    <select class="select-panel"></select>
+                                </span>
+                            </li>
+                            <li class="calculator__item">
+                                <div class="div-for-item-title">
+                                    <label class="calculator__item-title">
+                                        Вырез под 1 розетку
+                                    </label>
+                                </div>
+                                <span class="calculator__parametr">
+                                    <input type="text" class="input-panel" value="0"> <span class="small-text">шт</span>
+                                </span>
+                            </li>
+                            <li class="calculator__item">
+                                <div class="div-for-item-title">
+                                    <label class="calculator__item-title">
+                                        Отверстия
+                                    </label>
+                                </div>
+                                <span class="calculator__parametr">
+                                    <input type="text" class="input-panel" value="0"> <span class="small-text">шт</span>
+                                </span>
+                            </li>
+                            <li class="calculator__item">
+                                <div class="div-for-item-title">
+                                    <label class="calculator__item-title">
+                                        Расстояние за город
+                                    </label>
+                                </div>
+                                <span class="calculator__parametr">
+                                    <input type="text" class="input-panel" value="0"> <span class="small-text">км</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="calculator__calculation calculator__article">
+                    <p class="section-title section-title-calculation-indent">
+                        Подробный расчёт
+                    </p>
+                    <ul class="calculation__list list-reset">
+                        <li class="calculation__item">
+                            <label class="calculation__item-title">
+                                Замер
+                            </label>
+                            <span class="calculation__price-value free">Бесплатно</span>
+                        </li>
+                        <li class="calculation__item">
+                            <label class="calculation__item-title">
+                                Изделие
+                            </label>
+                            <span class="calculation__price-value"></span>
+                        </li>
+                        <li class="calculation__item">
+                            <label class="calculation__item-title">
+                                Подстветка
+                            </label>
+                            <span class="calculation__price-value"></span>
+                        </li>
+                        <li class="calculation__item">
+                            <label class="calculation__item-title">
+                                Доставка
+                            </label>
+                            <span class="calculation__price-value free">Бесплатно</span>
+                        </li>
+                        <li class="calculation__item">
+                            <label class="calculation__item-title">
+                                Монтаж
+                            </label>
+                            <span class="calculation__price-value"></span>
+                        </li>
+                    </ul>
+                    <p class="itogo">
+                        Итого
+                        <span class="valueITOGO"></span>
+                    </p>
+                    <div class="calculator__phone flex">
+                        <p class="phone__label">
+                            Ваш номер телефона
+                        </p>
+                        <div class="phone__number">
+                            <input class="phone__input" type="tel" maxlength="13" size="40" aria-required="true"
+                                placeholder="+375 (__)___-__-__" data-mask="+375 (__)___-__-__">
+                        </div>
+                        <button class="btn btn-to-book" type="button">
+                            Заказать скинали
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
