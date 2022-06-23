@@ -127,8 +127,16 @@ body {
     width: 200px;
 }
 
-.calculator__item-title {
+.list-parametrs__container {
+    align-items: flex-end;
+    gap: 24px
+}
 
+.addPanel {
+    margin-bottom: 25px;
+}
+
+.calculator__item-title {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -169,9 +177,9 @@ body {
 
 .select-glass {
     height: 40px;
-    width: 236px;
+    width: 245px;
     margin-right: 12px;
-    padding: 10px 20px;
+    padding: 0px 20px;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -181,6 +189,8 @@ body {
     border: 1px solid #F0F0F0;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
+    appearance: none;
+    background: url(../img/strelka.png) no-repeat right center;
 }
 
 .small-text {
@@ -193,7 +203,7 @@ body {
 
 .input-panel {
     height: 40px;
-    max-width: 70px;
+    max-width: 100px;
     padding: 10px 20px;
     font-style: normal;
     font-weight: 400;
@@ -208,7 +218,7 @@ body {
 
 .select-panel {
     height: 40px;
-    max-width: 90px;
+    max-width: 105px;
     padding: 10px 20px;
     font-style: normal;
     font-weight: 400;
@@ -219,6 +229,8 @@ body {
     border: 1px solid #F0F0F0;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
+    appearance: none;
+    background: url(../img/strelka.png) no-repeat right center;
 }
 
 .calculator__calculation {
@@ -252,6 +264,15 @@ body {
     border-bottom: 1px solid #F0F0F0;
 }
 
+
+.calculation__price-value {
+    font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+color: #333333;
+}
+
 .free {
     font-style: normal;
     font-weight: 400;
@@ -263,6 +284,7 @@ body {
 
 
 .itogo {
+    justify-content: space-between;
     margin-bottom: 60px;
     font-style: normal;
     font-weight: 400;
@@ -271,7 +293,7 @@ body {
     color: #787878;
 }
 
-.valueITOGO {
+.value-ITOGO {
     font-style: normal;
     font-weight: 600;
     font-size: 24px;

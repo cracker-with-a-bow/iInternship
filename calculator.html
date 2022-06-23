@@ -28,33 +28,39 @@
                         Калькулятор стоимости скинали
                     </p>
                     <div class="list-parametrs">
-                        <ul class="list-panels list-reset">
-                            <li class="calculator__item">
-                                <div class="div-for-item-title">
-                                    <label class="calculator__item-title">
-                                        1-я панель
-                                    </label>
-                                </div>
-                                <span class="price-parametr">
-                                    <input type="text" class="input-panel-size" value="100"> <span class="small-text">x</span>
-                                    <input type="text" class="input-panel-size" value="2"> <span class="small-text">см</span>
-                                </span>
-                            </li>
-                            <li class="calculator__item">
-                                <div class="div-for-item-title">
-                                    <label class="calculator__item-title">
-                                        2-я панель
-                                    </label>
-                                </div>
-                                <span class="price-parametr">
-                                    <input type="text" class="input-panel-size" value="1"> <span class="small-text">x</span>
-                                    <input type="text" class="input-panel-size" value="0"> <span class="small-text">см</span>
-                                </span>
-                            </li>
-                        </ul>
-                        <button type="button" class="btn addPanel">
-                            Добавить
-                        </button>
+                        <div class="list-parametrs__container flex">
+                            <ul class="list-panels list-reset">
+                                <li class="calculator__item">
+                                    <div class="div-for-item-title">
+                                        <label class="calculator__item-title">
+                                            1-я панель
+                                        </label>
+                                    </div>
+                                    <span class="price-parametr">
+                                        <input type="number" class="input-panel input-panel-size" value="0"> <span
+                                            class="small-text">x</span>
+                                        <input type="number" class="input-panel input-panel-size" value="0"> <span
+                                            class="small-text">см</span>
+                                    </span>
+                                </li>
+                                <li class="calculator__item">
+                                    <div class="div-for-item-title">
+                                        <label class="calculator__item-title">
+                                            2-я панель
+                                        </label>
+                                    </div>
+                                    <span class="price-parametr">
+                                        <input type="number" class="input-panel input-panel-size" value="0"> <span
+                                            class="small-text">x</span>
+                                        <input type="number" class="input-panel input-panel-size" value="0"> <span
+                                            class="small-text">см</span>
+                                    </span>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn addPanel">
+                                Добавить
+                            </button>
+                        </div>
                         <ul class="calculator__list list-reset">
                             <li class="calculator__item glass">
                                 <div class="div-for-item-title">
@@ -63,7 +69,14 @@
                                     </label>
                                 </div>
                                 <span class="calculator__parametr glass-type">
-                                    <select class="select-glass"></select>
+                                    <select class="select-glass">
+                                        <option value="glass-obuchnoe" selected>
+                                            Закаленное обычное
+                                        </option>
+                                        <option value="glass-osvetl">
+                                            Закаленное осветленное
+                                        </option>
+                                    </select>
                                 </span>
                             </li>
                             <li class="calculator__item">
@@ -73,7 +86,7 @@
                                     </label>
                                 </div>
                                 <span class="calculator__parametr">
-                                    <input type="checkbox" class="input-panel">
+                                    <input type="checkbox" class="input-panel UV-print-class" value="UV-print">
                                 </span>
                             </li>
                             <li class="calculator__item">
@@ -83,7 +96,14 @@
                                     </label>
                                 </div>
                                 <span class="calculator__parametr">
-                                    <select class="select-panel"></select>
+                                    <select class="select-panel illumination">
+                                        <option value="no">
+                                            нет
+                                        </option>
+                                        <option value="yes">
+                                            есть
+                                        </option>
+                                    </select>
                                 </span>
                             </li>
                             <li class="calculator__item">
@@ -93,7 +113,8 @@
                                     </label>
                                 </div>
                                 <span class="calculator__parametr">
-                                    <input type="text" class="input-panel" value="0"> <span class="small-text">шт</span>
+                                    <input type="number" class="input-panel" value="0" id="rozetka"> <span
+                                        class="small-text">шт</span>
                                 </span>
                             </li>
                             <li class="calculator__item">
@@ -103,7 +124,8 @@
                                     </label>
                                 </div>
                                 <span class="calculator__parametr">
-                                    <input type="text" class="input-panel" value="0"> <span class="small-text">шт</span>
+                                    <input type="number" class="input-panel" value="0" id="holes"> <span
+                                        class="small-text">шт</span>
                                 </span>
                             </li>
                             <li class="calculator__item">
@@ -113,7 +135,8 @@
                                     </label>
                                 </div>
                                 <span class="calculator__parametr">
-                                    <input type="text" class="input-panel" value="0"> <span class="small-text">км</span>
+                                    <input type="number" class="input-panel" value="0" id="distance">
+                                    <span class="small-text">км</span>
                                 </span>
                             </li>
                         </ul>
@@ -134,13 +157,13 @@
                             <label class="calculation__item-title">
                                 Изделие
                             </label>
-                            <span class="calculation__price-value"></span>
+                            <span class="calculation__price-value price-panel">0 руб</span>
                         </li>
                         <li class="calculation__item">
                             <label class="calculation__item-title">
                                 Подстветка
                             </label>
-                            <span class="calculation__price-value"></span>
+                            <span class="calculation__price-value illumination-print">0 руб</span>
                         </li>
                         <li class="calculation__item">
                             <label class="calculation__item-title">
@@ -152,12 +175,12 @@
                             <label class="calculation__item-title">
                                 Монтаж
                             </label>
-                            <span class="calculation__price-value"></span>
+                            <span class="calculation__price-value montazh"></span>
                         </li>
                     </ul>
-                    <p class="itogo">
+                    <p class="itogo flex">
                         Итого
-                        <span class="valueITOGO"></span>
+                        <span class="value-ITOGO"></span>
                     </p>
                     <div class="calculator__phone flex">
                         <p class="phone__label">
