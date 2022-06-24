@@ -39,47 +39,55 @@ document.addEventListener('DOMContentLoaded', function () {
   let summItogo = 0;
 
 
- // вывод в правую часть
+  // вывод в правую часть
 
- let pricePanelPrint = document.querySelector('.price-panel');
- let illuminationPrint = document.querySelector('.illumination-print');
- let montazhPrint = document.querySelector('.montazh');
- let montazh = 100; //монтаж, стоимость
- montazhPrint.textContent = montazh + ' руб';
+  let pricePanelPrint = document.querySelector('.price-panel');
+  let illuminationPrint = document.querySelector('.illumination-print');
+  let montazhPrint = document.querySelector('.montazh');
+  let montazh = 100; //монтаж, стоимость
+  montazhPrint.textContent = montazh + ' руб';
 
   let btnToBook = document.querySelector('.btn-to-book'); //кнопка заказать скинали
   //btnToBook.addEventListener('click', part3Task2); //клик по кнопке заказать скинали
 
   let btnAddPanel = document.querySelector('.addPanel');
   btnAddPanel.addEventListener('click', addNewPanel);
-
-  function changeAllInputPanels () {
-  let inputsSizesPanels = document.querySelectorAll('input.input-panel-size'); //объект, где все инпуты с размерами
-  //повесить событие на все инпуты с размерами
-  for (let elem of inputsSizesPanels) {
-    elem.addEventListener('change', changeItogoPanels);
+ 
+  function changeAllInputPanels() {
+    let inputsSizesPanels = document.querySelectorAll('input.input-panel-size'); //объект, где все инпуты с размерами
+    //повесить событие на все инпуты с размерами
+    for (let elem of inputsSizesPanels) {
+      inputsSizesPanels = document.querySelectorAll('input.input-panel-size'); //объект, где все инпуты с размерами
+      elem.addEventListener('change', changeItogoPanels);
+    }
   }
-}
+  changeAllInputPanels();
 
-  function addNewPanel () {
-    let listOfAllPanels = document.querySelector('.list-panels');
+  function addNewPanel() {
+    listOfAllPanels = document.querySelector('.list-panels');
     let newPanel = document.createElement('li');
     newPanel.className = 'calculator__item';
     newPanel.innerHTML = '<div class="div-for-item-title"><label class="calculator__item-title">Следующая панель</label></div><span class="price-parametr"><input type="number" class="input-panel input-panel-size" value="0"> <span class="small-text">x</span><input type="number" class="input-panel input-panel-size" value="0"> <span class="small-text">см</span></span>'
     listOfAllPanels.append(newPanel);
-    changeAllInputPanels ();
-
-    
+    changeAllInputPanels();
     itogoValue();
   }
 
-  function changeItogoHoles () {
+  function changeItogoHoles() {
+    if (parseInt(holesInput.value) < 0) {
+      holesPrice = 0;
+    } else {
     holesPrice = parseInt(holesInput.value) * hole1;
+    }
     itogoValue();
   }
 
-  function changeItogoDistance () {
+  function changeItogoDistance() {
+    if (parseInt(distanceInput.value) < 0) {
+      distancePrice = 0;
+    } else {
     distancePrice = parseInt(distanceInput.value) * km1;
+    }
     itogoValue();
   }
 
@@ -114,14 +122,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function changeItogoPanels() {
     summSizesPanels = 0;
-    // количество панелей и запись значений инпутов в объект
+    listPanels = document.querySelectorAll('.price-parametr'); 
     for (let key of listPanels) {
       countPanels++;
+      if ((parseInt(key.children[0].value) > 0) & (parseInt(key.children[2].value)) > 0) {
       summSizesPanels += (parseInt(key.children[0].value) * parseInt(key.children[2].value));
+      }
+      console.log(key)
     }
     panelsPrice = summSizesPanels * panel1;
-    pricePanelPrint.textContent = panelsPrice + ' руб';
-    
+    pricePanelPrint.textContent = (panelsPrice.toFixed(2)) + ' руб';
     itogoValue();
   }
 
@@ -129,18 +139,19 @@ document.addEventListener('DOMContentLoaded', function () {
     let socketValue = parseInt(socketInput.value);
     if (socketValue > 0) {
       socketPrice = socketValue * socket1;
+    } else {
+      socketPrice = 0;
     }
     itogoValue();
   }
 
-  function itogoValue () {
-    console.log (holesPrice, distancePrice, UVprintPrice, illuminationPrice, glassPrice, panelsPrice , socketPrice);
+  function itogoValue() {
     summItogo = montazh + holesPrice + distancePrice + UVprintPrice + illuminationPrice + glassPrice + panelsPrice + socketPrice;
-    ITOGO.textContent = summItogo;
+    ITOGO.textContent = (summItogo.toFixed(2));
   }
 
   summItogo = montazh + holesPrice + distancePrice + UVprintPrice + illuminationPrice + glassPrice + panelsPrice + socketPrice;
-  ITOGO.textContent = summItogo;
+  ITOGO.textContent = (summItogo.toFixed(2));
 
 
 })
